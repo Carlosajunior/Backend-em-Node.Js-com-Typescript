@@ -1,0 +1,25 @@
+export enum ProfileFields {
+  name = 'name',
+  phone = 'phone',
+  email = 'email',
+  cpf = 'cpf',
+  birthdate ='birthdate',
+  mother_name = 'mother_name',
+  gender = 'gender',
+  homeoffice = 'homeoffice',
+  uds='uds',
+  impedido = 'impedido',
+  open_to_work ='open_to_work',
+  verified = 'verified',
+  cep = 'cep',
+  state = 'state',
+  city = 'city',
+  accept_contract = 'accept_contract',
+  clt_claim = 'clt_claim',
+  pj_claim = 'pj_claim',
+  professional_title = 'professional_title',
+  professional_about = 'professional_about',
+  disc2_result = 'disc2_result',
+  quati_result = 'quati_result'
+}
+

@@ -1,0 +1,1 @@
+export * from './repositories/profile-history.repositories.mock'

@@ -1,0 +1,5 @@
+export * from './get-profile-by-email.service'
+export * from './create-profile.service'
+export * from './delete-behavioral-profile.service'
+export * from './update-profile.service'
+export * from './check-by-cpf.service'
