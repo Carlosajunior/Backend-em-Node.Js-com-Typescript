@@ -4,11 +4,9 @@ import { DecodeTokenService } from '../common/auth/services/decode-token.service
 import { CreateCognitoUserService } from '../common/cognito/services/create-cognito-user.service';
 import { FindCognitoUserService } from '../common/cognito/services/find-cognito-user.service';
 import { UpdateCognitoUserService } from '../common/cognito/services/update-cognito-user.service';
-import { Squad } from '../squads/entities/squad.entity';
 import { FirstAccessController } from './controllers/first-access.controller';
 import { LoggedUserController } from './controllers/logged-user.controller';
 import { UserGroupsController } from './controllers/user-groups.controller';
-import { UserSeedsController } from './controllers/user-seeds.controller';
 import { UserStatusController } from './controllers/user-status.controller';
 import { UserController } from './controllers/user.controller';
 import { UserRepository } from './repositories/user.repository';
@@ -24,13 +22,12 @@ import { UpdateLoggedUserService } from './services/update-logged-user.service';
 import { UpdateUserService } from './services/update-user.service';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([UserRepository, Squad])],
+  imports: [TypeOrmModule.forFeature([UserRepository])],
   controllers: [
     FirstAccessController,
     LoggedUserController,
     UserController,
     UserGroupsController,
-    UserSeedsController,
     UserStatusController
   ],
   providers: [

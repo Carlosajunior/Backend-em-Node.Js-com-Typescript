@@ -1,5 +1,3 @@
-import { Groups } from '@/modules/common/auth/decorators/groups.decorator';
-import { AccessProfiles } from '@/modules/common/shared/constants/access-profiles';
 import { BadRequestException, Body, Controller, Get, HttpCode, Param, Post, Put, Query } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { CreateUserDTO } from '../dtos/create-user.dto';
@@ -32,7 +30,6 @@ export class UserController {
 
   @Get()
   @HttpCode(200)
-  @Groups(AccessProfiles.ADMINISTRATOR)
   public async index(@Query() query: ListUsersDTO) {
     try {
       return await this.listUsers.execute(query);
@@ -43,7 +40,6 @@ export class UserController {
 
   @Post()
   @HttpCode(201)
-  @Groups(AccessProfiles.ADMINISTRATOR)
   public async create(@Body() data: CreateUserDTO) {
     try {
       await this.createUser.execute(data);
@@ -55,7 +51,6 @@ export class UserController {
 
   @Get(':id')
   @HttpCode(200)
-  @Groups(AccessProfiles.ADMINISTRATOR)
   public async show(@Param('id') id: string) {
     try {
       return await this.getUserById.execute(id);
@@ -66,7 +61,6 @@ export class UserController {
 
   @Put(':id')
   @HttpCode(201)
-  @Groups(AccessProfiles.ADMINISTRATOR)
   public async update(@Param('id') id: string, @Body() data: UpdateUserDTO) {
     try {
       return await this.updateUser.execute({ ...data, id });

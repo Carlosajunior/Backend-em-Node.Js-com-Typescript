@@ -23,7 +23,7 @@ export class UpdateUserService implements Service<UpdateUserRequest, void> {
       throw new Error('É necessário informar um id válido.');
 
     const userById = await this.userRepository.findOne({
-      id: request.id
+      where:{id: request.id}
     });
 
     if (!userById) throw new Error('É necessário informar um usuário válido.');
@@ -44,7 +44,7 @@ export class UpdateUserService implements Service<UpdateUserRequest, void> {
     const userToUpdate = this.userRepository.create({
       ...userModel.props,
       is_active: request.is_active,
-      id: request.id
+      //: request.id
     });
 
     const cognitoUser = await this.findCognitoUser.execute(userById.email);

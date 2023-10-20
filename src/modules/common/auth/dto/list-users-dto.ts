@@ -1,6 +1,5 @@
-import { BooleanStatus } from "@/modules/professional-profiles/profiles/contansts";
 import { Type } from "class-transformer";
-import { Max, IsNumberString, IsOptional, Min, IsString, MinLength, IsNumber, IsEnum } from "class-validator";
+import { Max, IsOptional, Min, IsString, MinLength, IsNumber, IsEnum, IsBoolean } from "class-validator";
 
 export class ListUsersDTO {
     @IsOptional()
@@ -16,6 +15,6 @@ export class ListUsersDTO {
     pagination_token: string
 
     @IsOptional()
-    @IsEnum(BooleanStatus)
-    status: BooleanStatus
+    @IsBoolean()
+    status: boolean
 }

@@ -1,4 +1,3 @@
-import { CreateAuditDTO } from '@/modules/audit/dtos';
 import { HttpException, HttpStatus } from '@nestjs/common';
 import * as cls from 'cls-hooked';
 import { Request, Response } from 'express';
@@ -65,11 +64,7 @@ export class RequestContext {
     return null;
   }
 
-  public static setEvent(event: CreateAuditDTO) {
-    const requestContext = RequestContext.currentRequestContext();
-    requestContext.request.event = event;
-    return null;
-  }
+
 
   public static setProfileID(profile_id: string) {
     const requestContext = RequestContext.currentRequestContext();

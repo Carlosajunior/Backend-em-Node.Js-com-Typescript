@@ -14,10 +14,6 @@ declare namespace Express {
       can_edit_vacancy?: boolean;
       access_profile: AccessProfiles;
       is_active: boolean;
-      squad_id: string;
-      squad: Squad;
-      role_id: string;
-      roles: Roles
       ip: string;
       sub?: string;
     };

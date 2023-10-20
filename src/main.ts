@@ -3,15 +3,7 @@ import { NestFactory } from '@nestjs/core';
 import { NestExpressApplication } from '@nestjs/platform-express';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
-import { AuditInterceptor } from './modules/audit/interceptors';
-import { LoggerInterceptor } from './modules/audit/interceptors/logger.interceptor';
 import { TrimBodyTextPipe } from './modules/common/pipes/trim-body-texts.pipe';
-import './modules/messages/queue/insert-last-sent-message-to-professional.consumer';
-import './modules/messages/queue/send-message.consumer';
-import './modules/vacancies/applications/queue/insert-candidate.consumer';
-import './modules/vacancies/queues/consumers/insert-tags.consumer';
-import './modules/vacancies/queues/consumers/update-langs.consumer';
-import './modules/professional-profiles/profiles/queues/consumers/update-profile-tags.consumer'
 
 process.env.TZ = 'America/Sao_Paulo'; // UTC -03:00
 console.log(new Date().toString());
@@ -25,8 +17,6 @@ async function bootstrap() {
     })
   );
   app.enableCors();
-  app.useGlobalInterceptors(new AuditInterceptor());
-  app.useGlobalInterceptors(new LoggerInterceptor());
 
   const config = new DocumentBuilder()
     .setTitle('SW Recruiter API')

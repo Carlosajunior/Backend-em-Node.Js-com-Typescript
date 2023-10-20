@@ -1,4 +1,0 @@
-export enum ExecutionTime {
-  APPOINTED_HOURS = 'APPOINTED_HOURS',
-  BUSINESS_HOURS = 'BUSINESS_HOURS'
-}
