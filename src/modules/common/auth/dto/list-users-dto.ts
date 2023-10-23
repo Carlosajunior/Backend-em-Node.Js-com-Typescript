@@ -1,5 +1,5 @@
 import { Type } from "class-transformer";
-import { Max, IsOptional, Min, IsString, MinLength, IsNumber, IsEnum, IsBoolean } from "class-validator";
+import { Max, IsOptional, Min, IsString, MinLength, IsNumber, IsBoolean } from "class-validator";
 
 export class ListUsersDTO {
     @IsOptional()
